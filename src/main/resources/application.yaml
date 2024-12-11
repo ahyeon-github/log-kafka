@@ -1,0 +1,25 @@
+server:
+  port: 8090
+spring:
+  kafka:
+    bootstrap-servers: 3.35.138.121:9092
+    consumer:
+      group-id: itstudy
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+cloud:
+  aws:
+    credentials:
+      access-key: <access-key>
+      secret-key: <secret-key>
+    s3:
+      bucket: log-bucket-springboot
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
